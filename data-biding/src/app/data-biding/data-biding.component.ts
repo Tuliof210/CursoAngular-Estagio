@@ -18,6 +18,7 @@ export class DataBidingComponent implements OnInit {
     alert('AAAAAAAAAAA');
   }
 
+  // tslint:disable-next-line: member-ordering
   valoratual = '';
 
   OnKeyUp(e: KeyboardEvent) {
@@ -25,7 +26,14 @@ export class DataBidingComponent implements OnInit {
     console.log((e.target as HTMLInputElement).value); // retorna o valor digitado dinamicamente
   }
 
-  name = 'tulio'
+  // tslint:disable-next-line: member-ordering
+  name = 'tulio';
+
+  // tslint:disable-next-line: member-ordering
+  pessoa = {
+    nome: 'Carlos',
+    idade: 19
+  };
 
 
   constructor() { }

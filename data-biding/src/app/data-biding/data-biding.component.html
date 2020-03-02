@@ -63,13 +63,22 @@
     </article>
 </section>
 
+<!--ATENÇÃO!! - PARA USAR O ngModel É NECESSARIO O IMPORT DO FormsModulo EM app.module.ts-->
 <section class="two-way-biding">
     <article>
         <h3>Two way data biding</h3>
         <div>
-            <input type="text" [value]="name" (input)="name = $event.target.value">
+            <!--Forma verbosa-->
             <input type="text" [ngModel]="name" (ngModelChange)="name = $event">
+            <br>
+            <!--Forma recomendada-->
+            <input type="text" [(ngModel)]="name">
             <p>Você digitou: {{ name }}</p>
+        </div>
+        <div>
+            <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos</p>
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
         </div>
     </article>
 </section>
