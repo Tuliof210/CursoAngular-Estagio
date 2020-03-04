@@ -1,0 +1,27 @@
+<h3>Diretiva <strong>*ngIf</strong></h3>
+
+<div *ngIf="cursos.length === 0">
+  Não há cursos para serem listados
+</div>
+<div *ngIf="cursos.length > 0">
+  Lista de cursos aqui
+</div>
+
+<div *ngIf="showCursos">
+  mostrar
+</div>
+<div *ngIf="!showCursos">
+  nao mostrar
+</div>
+<br>
+<button (click)="showCurso()">Mostrar ou Não</button>
+
+
+<!--Alternativa ao ngif (pois é muito custoso)-->
+<h3>Alternativa ao ngif (pois é muito custoso)</h3>
+<div [hidden]="showCursos">
+  mostrar
+</div>
+<div [hidden]="!showCursos">
+  nao mostrar
+</div>
