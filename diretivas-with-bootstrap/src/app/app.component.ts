@@ -7,6 +7,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService) {}
 
