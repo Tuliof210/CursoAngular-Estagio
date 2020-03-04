@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DiretivaNgswitchModule } from './diretiva-ngswitch/diretiva-ngswitch.module';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { DiretivaNgforModule } from './diretiva-ngfor/diretiva-ngfor.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +15,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ModalModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
-    DiretivaNgswitchModule
+    DiretivaNgswitchModule,
+    DiretivaNgforModule
   ],
   providers: [],
   bootstrap: [AppComponent]
