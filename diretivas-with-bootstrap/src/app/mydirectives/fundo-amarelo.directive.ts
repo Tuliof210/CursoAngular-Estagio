@@ -1,5 +1,5 @@
 // Necessario importar manualmente o 'ElementRef'
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
   // tslint:disable-next-line: directive-selector
@@ -8,8 +8,7 @@ import { Directive, ElementRef } from '@angular/core';
 })
 export class FundoAmareloDirective {
   // tslint:disable-next-line: variable-name
-  constructor(private _element: ElementRef) {
-    // console.log(this._element);
-    this._element.nativeElement.style.backgroundColor = 'yellow';
+  constructor(private _element: ElementRef, private _renderer: Renderer2) {
+    this._renderer.setStyle(this._element.nativeElement, 'background-color', 'yellow');
   }
 }
