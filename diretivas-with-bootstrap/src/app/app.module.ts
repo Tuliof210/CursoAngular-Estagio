@@ -16,6 +16,7 @@ import { ExemploNgcontentComponent } from './exemplo-ngcontent/exemplo-ngcontent
 import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
 
 import { FundoAmareloDirective } from './mydirectives/fundo-amarelo.directive';
+import { HighlightMouseDirective } from './mydirectives/highlight-mouse.directive';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FundoAmareloDirective } from './mydirectives/fundo-amarelo.directive';
     OperadorElvisComponent,
     ExemploNgcontentComponent,
     FundoAmareloDirective,
-    CustomDirectivesComponent
+    CustomDirectivesComponent,
+    HighlightMouseDirective
   ],
   imports: [
     ModalModule.forRoot(),
