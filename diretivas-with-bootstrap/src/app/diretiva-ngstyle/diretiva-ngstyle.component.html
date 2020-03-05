@@ -1,0 +1,12 @@
+<h3>Styles com property biding (style biding)</h3>
+<button [style.backgroundColor]="ativo ? 'blue' : 'gray'" [style.color]="ativo ? 'white' : 'black'" [style.fontWeight]="ativo ? 'bold' : 'normal'" [style.fontSize]="tamanhoFonte + 'px'" (click)="Change()">Mudar atributo 'ativo'</button>
+
+<hr>
+
+<h3>Using NgStyle</h3>
+<button [ngStyle]="{
+  'backgroundColor': ativo ? 'blue' : 'gray',
+  'color': ativo ? 'white' : 'black',
+  'fontWeight': ativo ? 'bold' : 'normal',
+  'fontSize': tamanhoFonte + 'px'
+}" (click)="Change()">Mudar atributo 'ativo'</button>

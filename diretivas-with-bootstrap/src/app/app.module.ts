@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,6 +8,8 @@ import { DiretivaNgswitchModule } from './diretiva-ngswitch/diretiva-ngswitch.mo
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { DiretivaNgforModule } from './diretiva-ngfor/diretiva-ngfor.module';
+import { DiretivaNgstyleModule } from './diretiva-ngstyle/diretiva-ngstyle.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +19,8 @@ import { DiretivaNgforModule } from './diretiva-ngfor/diretiva-ngfor.module';
     BrowserModule,
     AppRoutingModule,
     DiretivaNgswitchModule,
-    DiretivaNgforModule
+    DiretivaNgforModule,
+    DiretivaNgstyleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
