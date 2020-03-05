@@ -1,1 +1,12 @@
-<app-operador-elvis></app-operador-elvis>
+<!--O conteudo da tag sera enviada como parametro para o template contendo ng-content-->
+<app-exemplo-ngcontent>Faça o que quiser, so não enche meu saco</app-exemplo-ngcontent>
+<hr>
+<br>
+<hr>
+
+<!-- Exemplo com mais de um ng-content-->
+<app-exemplo-ngcontent>
+  <div class="titulo">Como diria eu mesmo</div>
+  <!-- Caso haja mais de um elemento com determinada classe o angular ira concatenar os resultados em um so -->
+  <div class="corpo">Faça o que quiser, so não enche meu saco</div>
+</app-exemplo-ngcontent>

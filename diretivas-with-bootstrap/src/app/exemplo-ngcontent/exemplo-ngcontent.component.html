@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <ng-content select=".titulo"></ng-content>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>
+        <!-- Receberá o conteudo fornecido pelo app component-->
+        <ng-content select=".corpo"></ng-content>
+        <!-- Select so é necessario quando houver mais de um ng-content-->
+      </p>
+      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+  </div>
+</div>
