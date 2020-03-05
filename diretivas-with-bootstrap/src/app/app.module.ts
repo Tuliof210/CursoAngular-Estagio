@@ -13,12 +13,18 @@ import { DiretivaNgstyleModule } from './diretiva-ngstyle/diretiva-ngstyle.modul
 
 import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
 import { ExemploNgcontentComponent } from './exemplo-ngcontent/exemplo-ngcontent.component';
+import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
+
+import { FundoAmareloDirective } from './mydirectives/fundo-amarelo.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     OperadorElvisComponent,
-    ExemploNgcontentComponent
+    ExemploNgcontentComponent,
+    FundoAmareloDirective,
+    CustomDirectivesComponent
   ],
   imports: [
     ModalModule.forRoot(),
