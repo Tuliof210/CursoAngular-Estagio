@@ -17,6 +17,7 @@ import { CustomDirectivesComponent } from './custom-directives/custom-directives
 
 import { FundoAmareloDirective } from './mydirectives/fundo-amarelo.directive';
 import { HighlightMouseDirective } from './mydirectives/highlight-mouse.directive';
+import { HighlightDirective } from './mydirectives/highlight.directive';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HighlightMouseDirective } from './mydirectives/highlight-mouse.directiv
     ExemploNgcontentComponent,
     FundoAmareloDirective,
     CustomDirectivesComponent,
-    HighlightMouseDirective
+    HighlightMouseDirective,
+    HighlightDirective
   ],
   imports: [
     ModalModule.forRoot(),
