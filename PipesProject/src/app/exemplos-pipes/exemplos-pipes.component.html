@@ -1,0 +1,15 @@
+<div class="card" style="width: 50rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ livro.titulo | uppercase }}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Lançamento: {{ livro.dataLancamento | date: 'dd/MM/yyyy' }}</li>
+    <li class="list-group-item">Rating: {{ livro.rating | number: '1.1-2' }}</li>
+    <li class="list-group-item">Número de Páginas: {{ livro.numPages | number }}</li>
+    <li class="list-group-item">Preço: {{ livro.price | currency: 'BRL' }}</li>
+    <li class="list-group-item">Livro: {{ livro | json }}</li>
+  </ul>
+  <div class="card-body">
+    <a href="{{ livro.url }}" target="blank" class="card-link">Compre</a>
+  </div>
+</div>
