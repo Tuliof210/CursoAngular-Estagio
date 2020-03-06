@@ -1,6 +1,6 @@
 <div class="card" style="width: 50rem;">
   <div class="card-body">
-    <h5 class="card-title">{{ livro.titulo | uppercase }}</h5>
+    <h5 class="card-title">{{ livro.titulo | camelCase }}</h5>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Lançamento: {{ livro.dataLancamento | date: 'dd/MM/yyyy' }}</li>
