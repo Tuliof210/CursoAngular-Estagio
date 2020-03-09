@@ -1,0 +1,15 @@
+<nav>
+  <div class="nav-wrapper">
+    <!--Diretiva que adiciona um link de rota-->
+    <a routerLink="/" class="brand-logo right">Rotas</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <!--Diretiva que adiciona uma classe a rota ativa-->
+      <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
+      <li routerLinkActive="active"><a routerLink="/cursos">Cursos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
