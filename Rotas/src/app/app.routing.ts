@@ -1,3 +1,4 @@
+import { CursoNaoencontradoComponent } from './curso-naoencontrado/curso-naoencontrado.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
@@ -10,7 +11,8 @@ const APP_ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cursos', component: CursosComponent },
-  { path: 'curso/:id', component: CursoDetalheComponent }
+  { path: 'curso/:id', component: CursoDetalheComponent },
+  { path: 'notFound', component: CursoNaoencontradoComponent}
 ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

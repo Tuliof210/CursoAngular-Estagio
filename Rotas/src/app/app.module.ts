@@ -1,3 +1,4 @@
+import { CursosService } from './cursos/cursos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,21 +10,24 @@ import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
 
 import { Routing } from './app.routing';
+
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursoNaoencontradoComponent } from './curso-naoencontrado/curso-naoencontrado.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
     CursosComponent,
-    CursoDetalheComponent
+    CursoDetalheComponent,
+    CursoNaoencontradoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     Routing
   ],
-  providers: [],
+  providers: [CursosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
