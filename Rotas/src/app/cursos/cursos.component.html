@@ -1,4 +1,6 @@
 <h3>Lista de Cursos</h3>
+<h4>Pagina: {{ pagina }}</h4>
 <div class="collection">
   <a class="collection-item" [routerLink]="['/curso',item.id]" *ngFor="let item of cursos">ID: {{ item.id }} | Curso: {{ item.nome }}</a>
 </div>
+<a (click)="nextPage()" class="waves-effect waves-teal btn-flat">+</a>

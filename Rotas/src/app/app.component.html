@@ -5,7 +5,7 @@
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <!--Diretiva que adiciona uma classe a rota ativa-->
       <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
-      <li routerLinkActive="active"><a routerLink="/cursos">Cursos</a></li>
+      <li routerLinkActive="active"><a [queryParams]="{pagina:1}" routerLink="/cursos">Cursos</a></li>
       <li routerLinkActive="active"><a [routerLink]="['curso', idCurso.value]">Curso com Detalhe</a></li>
     </ul>
   </div>
