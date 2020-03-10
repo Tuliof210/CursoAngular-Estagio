@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="row">
+  <div class="input-field col s6 offset-s3">
+    <h1>Login</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s6 offset-s3">
+    <input [(ngModel)]="usuario.nome" id="user" type="text" class="validate">
+    <label class="active" for="user">Usuário</label>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s6 offset-s3">
+    <input [(ngModel)]="usuario.senha" id="senha" type="password" class="validate">
+    <label class="active" for="senha">Senha</label>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s6 offset-s3">
+    <button type="submit" name="action" (click)="doLogin()" class="btn waves-effect waves-light yellow darken-4">
+      Login<i class="material-icons right">send</i>
+    </button>
+  </div>
+</div>

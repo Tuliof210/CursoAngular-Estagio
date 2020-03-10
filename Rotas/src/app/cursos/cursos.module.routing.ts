@@ -8,8 +8,8 @@ import { CursoNaoencontradoComponent } from './curso-naoencontrado/curso-naoenco
 
 const CURSOS_ROUTES: Routes = [
   { path: '', component: CursosComponent },
-  { path: 'curso/:id', component: CursoDetalheComponent },
-  { path: 'notFound', component: CursoNaoencontradoComponent}
+  { path: 'notFound', component: CursoNaoencontradoComponent},
+  { path: ':id', component: CursoDetalheComponent }
 ];
 
 @NgModule({
