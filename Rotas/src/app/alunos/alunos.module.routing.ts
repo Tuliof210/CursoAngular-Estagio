@@ -6,7 +6,7 @@ import { AlunoFormComponent } from './aluno-form/aluno-form.component';
 import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 
 const ALUNOS_ROUTES = [
-  { path: 'alunos', component: AlunosComponent, children: [
+  { path: '', component: AlunosComponent, children: [
     { path: 'novo', component: AlunoFormComponent}, // hardcoded antes
     { path: ':id', component: AlunoDetalheComponent}, // dinamico depois
     { path: ':id/editar', component: AlunoFormComponent}
