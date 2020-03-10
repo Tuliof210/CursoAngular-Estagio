@@ -1,13 +1,13 @@
-<nav>
+<nav *ngIf="mostrarMenu">
   <div class="indigo darken-4 nav-wrapper">
     <!--Diretiva que adiciona um link de rota-->
     <a routerLink="/" class="brand-logo right">Rotas</a>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <!--Diretiva que adiciona uma classe a rota ativa-->
       <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
-      <li *ngIf="mostrarMenu" routerLinkActive="active"><a [queryParams]="{pagina:1}" routerLink="/cursos">Cursos</a></li>
+      <li routerLinkActive="active"><a [queryParams]="{pagina:1}" routerLink="/cursos">Cursos</a></li>
       <!--<li routerLinkActive="active"><a [routerLink]="['curso', idCurso.value]">Curso com Detalhe</a></li>-->
-      <li *ngIf="mostrarMenu" routerLinkActive="active"><a routerLink="/alunos">Alunos</a></li>
+      <li routerLinkActive="active"><a routerLink="/alunos">Alunos</a></li>
     </ul>
   </div>
 </nav>
