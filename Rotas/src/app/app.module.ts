@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app.module.routing';
 
 import { CursosModule } from './cursos/cursos.module';
 import { AlunosModule } from './alunos/alunos.module';
+
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { AlunosModule } from './alunos/alunos.module';
     BrowserModule,
     AppRoutingModule,
     CursosModule,
-    AlunosModule
+    AlunosModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

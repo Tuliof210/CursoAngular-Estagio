@@ -6,14 +6,14 @@
       <!--Diretiva que adiciona uma classe a rota ativa-->
       <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
       <li routerLinkActive="active"><a [queryParams]="{pagina:1}" routerLink="/cursos">Cursos</a></li>
-      <li routerLinkActive="active"><a [routerLink]="['curso', idCurso.value]">Curso com Detalhe</a></li>
+      <!--<li routerLinkActive="active"><a [routerLink]="['curso', idCurso.value]">Curso com Detalhe</a></li>-->
       <li routerLinkActive="active"><a routerLink="/alunos">Alunos</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
-  <p>Entre com o ID do Curso</p>
-  <input #idCurso>
+  <!--<p>Entre com o ID do Curso</p>
+  <input #idCurso>-->
   <router-outlet></router-outlet>
 </div>

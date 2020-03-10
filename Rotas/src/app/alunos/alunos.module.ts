@@ -7,12 +7,17 @@ import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 
 import { AlunosRoutingModule } from './alunos.module.routing';
 
+import { AlunosService } from './alunos.service';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AlunosComponent, AlunoFormComponent, AlunoDetalheComponent],
   imports: [
     CommonModule,
-    AlunosRoutingModule
-  ]
+    AlunosRoutingModule,
+    FormsModule
+  ],
+  providers: [AlunosService]
 })
 export class AlunosModule { }

@@ -1,1 +1,8 @@
-<p>aluno-detalhe works!</p>
+<h3>Detalhes Aluno</h3>
+<ul class="collection">
+  <li class="collection-item">ID: {{ aluno.id }}</li>
+  <li class="collection-item">Nome: {{ aluno.nome }}</li>
+  <li class="collection-item">Email: {{ aluno.email }}</li>
+</ul>
+
+<a (click)="editarContato()" class="waves-effect waves-light btn">Editar</a>
