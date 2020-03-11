@@ -7,11 +7,12 @@ import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from './guard/auth.guard';
 
+// canActivate deve ser o ultimo parametro
 const APP_ROUTES: Routes = [
-  { path: 'cursos', canActivate: [AuthGuard], loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule)},
-  { path: 'alunos', canActivate: [AuthGuard], loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule)},
-  { path: '', component: HomeComponent },
-  { path: 'login', canActivate: [AuthGuard], component: LoginComponent }
+  { path: 'cursos', loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule), canActivate: [AuthGuard] },
+  { path: 'alunos', loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule), canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
