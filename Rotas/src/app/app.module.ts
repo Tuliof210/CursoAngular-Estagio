@@ -1,3 +1,4 @@
+import { AlunoDetalheResolver } from './guards/aluno-detalhe.resolver';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -29,7 +30,8 @@ import { CursosGuard } from './guards/cursos.guard';
   providers: [
     AuthService,
     AuthGuard,
-    CursosGuard
+    CursosGuard,
+    AlunoDetalheResolver
   ],
   bootstrap: [AppComponent]
 })

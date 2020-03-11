@@ -8,11 +8,16 @@ import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 import { AlunosGuard } from '../guards/alunos.guard';
 import { AlunosDeactivateGuard } from './../guards/alunos-deactivate.guard';
 
+import { AlunoDetalheResolver } from '../guards/aluno-detalhe.resolver';
+
 const ALUNOS_ROUTES = [
   { path: '', component: AlunosComponent,
     canActivateChild: [AlunosGuard], children: [
     { path: 'novo', component: AlunoFormComponent}, // hardcoded antes
-    { path: ':id', component: AlunoDetalheComponent}, // dinamico depois
+    {
+      path: ':id', component: AlunoDetalheComponent,
+      resolve: { aluno : AlunoDetalheResolver }
+    }, // dinamico depois
     {
       path: ':id/editar', component: AlunoFormComponent,
       canDeactivate: [AlunosDeactivateGuard]
