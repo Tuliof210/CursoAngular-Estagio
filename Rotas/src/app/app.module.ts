@@ -12,8 +12,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AuthService } from './login/auth.service';
 
-import { AuthGuard } from './guard/auth.guard';
-import { CursosGuard } from './guard/cursos.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { CursosGuard } from './guards/cursos.guard';
 
 @NgModule({
   declarations: [

@@ -5,12 +5,14 @@ import { AlunosService } from '../alunos.service';
 
 import { Subscription } from 'rxjs';
 
+import { IFormDeactivate } from './../../guards/iform-deactivate.ts';
+
 @Component({
   selector: 'app-aluno-form',
   templateUrl: './aluno-form.component.html',
   styleUrls: ['./aluno-form.component.css']
 })
-export class AlunoFormComponent implements OnInit {
+export class AlunoFormComponent implements OnInit, IFormDeactivate {
 
   // tslint:disable-next-line: no-inferrable-types variable-name
   public _mudou: boolean = false;
@@ -42,5 +44,9 @@ export class AlunoFormComponent implements OnInit {
   mudou() {
     // tslint:disable-next-line: no-unused-expression
     this._mudou = true;
+  }
+
+  podeDesativar() {
+    return !this._mudou;
   }
 }

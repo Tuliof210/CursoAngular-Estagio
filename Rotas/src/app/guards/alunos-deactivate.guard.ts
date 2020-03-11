@@ -4,16 +4,17 @@ import { Observable } from "rxjs";
 
 import { AlunoFormComponent } from './../alunos/aluno-form/aluno-form.component';
 
+import { IFormDeactivate } from './iform-deactivate.ts';
+
 @Injectable()
-export class AlunosDeactivateGuard implements CanDeactivate<AlunoFormComponent> {
+export class AlunosDeactivateGuard implements CanDeactivate<IFormDeactivate> {
 
     canDeactivate(
-      component: AlunoFormComponent,
+      component: IFormDeactivate,
       route: ActivatedRouteSnapshot,
       state: RouterStateSnapshot
     ): Observable<boolean>|Promise<boolean>|boolean {
-      console.log('AlunosDeactivateGuard');
-      alert('nop')
-      return !component._mudou;
+        console.log(component.podeDesativar());
+        return component.podeDesativar();
   }
 }

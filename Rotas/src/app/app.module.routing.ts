@@ -5,8 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
-import { AuthGuard } from './guard/auth.guard';
-import { CursosGuard } from './guard/cursos.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { CursosGuard } from './guards/cursos.guard';
 
 // canActivate deve ser o ultimo parametro
 const APP_ROUTES: Routes = [
