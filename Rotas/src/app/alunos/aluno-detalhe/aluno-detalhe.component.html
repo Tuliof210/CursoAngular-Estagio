@@ -5,4 +5,4 @@
   <li class="collection-item">Email: {{ aluno.email }}</li>
 </ul>
 
-<a (click)="editarContato()" class="yellow darken-4 waves-effect waves-light btn">Editar</a>
+<a *ngIf="mostrarBotao" (click)="editarContato()" class="yellow darken-4 waves-effect waves-light btn">Editar</a>
