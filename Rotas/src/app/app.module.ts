@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from './login/auth.service';
 
 import { AuthGuard } from './guard/auth.guard';
-import { AlunosGuard } from './guard/alunos.guard';
 import { CursosGuard } from './guard/cursos.guard';
 
 @NgModule({
@@ -30,8 +29,7 @@ import { CursosGuard } from './guard/cursos.guard';
   providers: [
     AuthService,
     AuthGuard,
-    CursosGuard,
-    AlunosGuard
+    CursosGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -12,6 +12,9 @@ import { Subscription } from 'rxjs';
 })
 export class AlunoFormComponent implements OnInit {
 
+  // tslint:disable-next-line: no-inferrable-types variable-name
+  public _mudou: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private alunosService: AlunosService
@@ -34,5 +37,10 @@ export class AlunoFormComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.inscricao.unsubscribe();
+  }
+
+  mudou() {
+    // tslint:disable-next-line: no-unused-expression
+    this._mudou = true;
   }
 }

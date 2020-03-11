@@ -15,7 +15,7 @@ export class AuthService {
   showMenuEmitter = new EventEmitter<boolean>();
 
   authLogin(usuario: User) {
-    if (usuario.nome === 'usuario@email.com' && usuario.senha === '1234') {
+    if (usuario.nome === 'usuario' && usuario.senha === '1234') {
       this.usuarioAutenticado = true;
 
       this.showMenuEmitter.emit(true);

@@ -9,8 +9,6 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class AlunosGuard implements CanActivateChild {
 
-  showBotaoEmitter = new EventEmitter<boolean>();
-
   canActivateChild(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -20,9 +18,7 @@ export class AlunosGuard implements CanActivateChild {
 
     if (state.url.includes('editar')) {
 
-      this.showBotaoEmitter.emit(false);
-
-      return false;
+      return true;
     }
 
     return true;

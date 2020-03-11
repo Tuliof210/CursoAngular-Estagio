@@ -7,7 +7,6 @@ import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from './guard/auth.guard';
 import { CursosGuard } from './guard/cursos.guard';
-import { AlunosGuard } from './guard/alunos.guard';
 
 // canActivate deve ser o ultimo parametro
 const APP_ROUTES: Routes = [
@@ -20,8 +19,7 @@ const APP_ROUTES: Routes = [
   {
     path: 'alunos',
     loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule),
-    canActivate: [AuthGuard],
-    canActivateChild: [AlunosGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: '',

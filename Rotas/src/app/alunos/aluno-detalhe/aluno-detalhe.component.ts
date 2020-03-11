@@ -1,4 +1,3 @@
-import { AuthService } from './../../login/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs';
@@ -16,23 +15,19 @@ export class AlunoDetalheComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private alunosService: AlunosService,
-    private authService: AuthService
+    private alunosService: AlunosService
   ) { }
 
   aluno: any;
   inscricao: Subscription;
 
-  mostrarBotao: boolean = false;
+  // mostrarBotao: boolean = false;
 
   ngOnInit(): void {
     this.inscricao = this.route.params.subscribe((params: any) => {
       let id = params['id'];
       this.aluno = this.alunosService.getAluno(id);
     });
-
-    this.authService.showMenuEmitter.subscribe(mostrar => this.mostrarBotao = mostrar);
-    console.log(this.mostrarBotao);
 
   }
 
@@ -42,7 +37,6 @@ export class AlunoDetalheComponent implements OnInit {
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnDestroy(): void {
-    this.authService.showMenuEmitter.unsubscribe();
     this.inscricao.unsubscribe();
   }
 }
