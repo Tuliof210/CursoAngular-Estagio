@@ -1,5 +1,10 @@
 # RequestsHttp
 
+Adicionar plugin do REST Client, e instalar o json server globalmente
+criar arquivo `db.json`
+
+Run => `json-server --watch db.json`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
 ## Development server
