@@ -10,7 +10,8 @@ POST http://localhost:3000/cursos HTTP/1.1
 content-type: application/jsons
 
 {
-  "nome": "Ruby"
+  "nome": "react",
+  "id": 5
 }
 
 ###
@@ -24,4 +25,4 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:3000/cursos/2
+DELETE http://localhost:3000/cursos/4

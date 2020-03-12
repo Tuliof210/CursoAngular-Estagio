@@ -1,6 +1,5 @@
 {
-  "cursos": [
-    {
+  "cursos": [{
       "nome": "C#",
       "id": 1
     },
@@ -11,6 +10,14 @@
     {
       "nome": "Ruby",
       "id": 3
+    },
+    {
+      "nome": "Python",
+      "id": 4
+    },
+    {
+      "nome": "C",
+      "id": 5
     }
   ]
 }
