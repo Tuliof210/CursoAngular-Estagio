@@ -9,10 +9,12 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRouting } from './app.routing';
 import { AppComponent } from './app.component';
+import { CursosFormComponent } from './cursos-form/cursos-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CursosFormComponent
   ],
   imports: [
     BrowserModule,

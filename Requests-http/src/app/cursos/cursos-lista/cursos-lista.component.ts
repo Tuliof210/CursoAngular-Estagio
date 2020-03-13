@@ -1,3 +1,4 @@
+import { AlertModalService } from './../../shared/alert-modal.service';
 import { AlertModalComponent } from './../../shared/alert-modal/alert-modal.component';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Component, OnInit } from '@angular/core';
@@ -20,7 +21,7 @@ export class CursosListaComponent implements OnInit {
 
   constructor(
     private service: CursosService,
-    private modalService: BsModalService
+    private alert: AlertModalService
   ) { }
 
   // o dolar é uma convenção para deixar claro que a variavel é um observable
@@ -28,12 +29,8 @@ export class CursosListaComponent implements OnInit {
 
   error$ = new Subject<boolean>();
 
-  bsModalRef: BsModalRef;
-
   handleError() {
-    this.bsModalRef = this.modalService.show(AlertModalComponent);
-    this.bsModalRef.content.type = 'danger';
-    this.bsModalRef.content.message = 'Erro ao carregar a lista de cursos.';
+    this.alert.showDanger('Erro ao carregar a lista de cursos.');
   }
 
   onRefresh() {
