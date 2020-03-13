@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+
+import { Observable, empty, Subject } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 import { Curso } from './../curso';
 import { CursosService } from '../cursos.service';
+
 
 
 @Component({
@@ -18,8 +21,21 @@ export class CursosListaComponent implements OnInit {
   // o dolar é uma convenção para deixar claro que a variavel é um observable
   cursos$: Observable<Curso[]>;
 
+  error$ = new Subject<boolean>();
+
+  onRefresh() {
+    this.cursos$ = this.service.list()
+    .pipe(
+      catchError(e => {
+        console.error(e);
+        this.error$.next(true);
+        return empty();
+      })
+    );
+  }
+
   ngOnInit(): void {
     // this.service.list().subscribe(dados => this.cursos = dados);
-    this.cursos$ = this.service.list();
+    this.onRefresh();
   }
 }
