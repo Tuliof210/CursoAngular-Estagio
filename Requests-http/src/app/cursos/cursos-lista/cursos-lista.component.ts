@@ -1,3 +1,5 @@
+import { AlertModalComponent } from './../../shared/alert-modal/alert-modal.component';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Component, OnInit } from '@angular/core';
 
 import { Observable, empty, Subject } from 'rxjs';
@@ -16,19 +18,31 @@ import { CursosService } from '../cursos.service';
 })
 export class CursosListaComponent implements OnInit {
 
-  constructor(private service: CursosService) { }
+  constructor(
+    private service: CursosService,
+    private modalService: BsModalService
+  ) { }
 
   // o dolar é uma convenção para deixar claro que a variavel é um observable
   cursos$: Observable<Curso[]>;
 
   error$ = new Subject<boolean>();
 
+  bsModalRef: BsModalRef;
+
+  handleError() {
+    this.bsModalRef = this.modalService.show(AlertModalComponent);
+    this.bsModalRef.content.type = 'danger';
+    this.bsModalRef.content.message = 'Erro ao carregar a lista de cursos.';
+  }
+
   onRefresh() {
     this.cursos$ = this.service.list()
     .pipe(
       catchError(e => {
         console.error(e);
-        this.error$.next(true);
+        // this.error$.next(true);
+        this.handleError();
         return empty();
       })
     );
