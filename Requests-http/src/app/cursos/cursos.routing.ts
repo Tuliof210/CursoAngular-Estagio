@@ -4,10 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { CursosListaComponent } from './cursos-lista/cursos-lista.component';
 import { CursosFormComponent } from './cursos-form/cursos-form.component';
 
+import { CursoResolverGuard } from './../guards/curso-resolver.guard';
+
 const routes: Routes = [
   { path: '', component: CursosListaComponent},
-  { path: 'new', component: CursosFormComponent},
-  { path: 'edit/:id', component: CursosFormComponent}
+  {
+    path: 'new',
+    component: CursosFormComponent,
+    resolve: CursoResolverGuard
+  },
+  {
+    path: 'edit/:id',
+    component: CursosFormComponent,
+    resolve: CursoResolverGuard
+  }
 ];
 
 @NgModule({
