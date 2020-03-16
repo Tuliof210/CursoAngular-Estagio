@@ -38,7 +38,7 @@ export class CursosListaComponent implements OnInit {
   }
 
   onEdit(id: number) {
-    this.router.navigate(['editar', id], { relativeTo: this.route});
+    this.router.navigate(['edit', id], { relativeTo: this.route});
   }
 
   onDelete(id: number) {

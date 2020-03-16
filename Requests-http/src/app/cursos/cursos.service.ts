@@ -24,6 +24,10 @@ export class CursosService {
     );
   }
 
+  loadById(id) {
+    return this.http.get<Curso>(`${this.API}/${id}`).pipe(take(1)); // ira escutar/ir ao servidor apenas uma vez
+  }
+
   create(curso) {
     return this.http.post(this.API, curso).pipe(take(1));
   }

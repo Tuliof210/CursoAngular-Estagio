@@ -5,6 +5,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { AlertModalService } from './../../shared/alert-modal.service';
 import { CursosService } from './../cursos.service';
+import { ActivatedRoute } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cursos-form',
@@ -17,7 +19,8 @@ export class CursosFormComponent implements OnInit {
     private fb: FormBuilder,
     private service: CursosService,
     private modal: AlertModalService,
-    private location: Location
+    private location: Location,
+    private route: ActivatedRoute
   ) { }
 
   form: FormGroup;
@@ -53,8 +56,29 @@ export class CursosFormComponent implements OnInit {
     return this.form.get(field).errors;
   }
 
+  updateForm(curso) {
+    this.form.patchValue({
+      id: curso.id,
+      nome: curso.nome
+    });
+  }
+
   ngOnInit(): void {
+
+    this.route.params
+    .pipe(
+      map((params: any) => params['id']),
+      switchMap(id => this.service.loadById(id))
+    ).subscribe(curso => this.updateForm(curso));
+
+    /*
+      concatMap -> ordem da requisição importa
+      mergeMap -> ordem nao importa
+      exhaustMap -> casos de login
+    */
+
     this.form = this.fb.group({
+      id: [null],
       nome: [
         null,
         [
