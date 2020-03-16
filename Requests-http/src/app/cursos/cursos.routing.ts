@@ -11,12 +11,16 @@ const routes: Routes = [
   {
     path: 'new',
     component: CursosFormComponent,
-    resolve: CursoResolverGuard
+    resolve: {
+      curso: CursoResolverGuard
+    }
   },
   {
     path: 'edit/:id',
     component: CursosFormComponent,
-    resolve: CursoResolverGuard
+    resolve: {
+      curso: CursoResolverGuard
+    }
   }
 ];
 

@@ -7,7 +7,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CursosRouting } from './cursos.routing';
 import { CursosListaComponent } from './cursos-lista/cursos-lista.component';
 
-
 @NgModule({
   declarations: [
     CursosListaComponent,
