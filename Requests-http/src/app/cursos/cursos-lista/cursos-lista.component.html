@@ -23,11 +23,11 @@
           <td>{{ curso.nome }}</td>
           <td>
             <span class="float-right">
-              <button class="btn btn-outline-warning mb-1 btn-sm">Atualizar</button>
+              <button (click)="onEdit(curso.id)"  class="btn btn-outline-warning mb-1 btn-sm">Atualizar</button>
 
               <!-- Espaço proposital para os botoes -->
 
-              <button class="btn btn-outline-danger mb-1 btn-sm">Remover</button>
+              <button (click)="onDelete(curso.id)" class="btn btn-outline-danger mb-1 btn-sm">Remover</button>
             </span>
           </td>
         </tr>
