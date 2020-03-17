@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { Observable, empty, Subject } from 'rxjs';
@@ -22,6 +22,7 @@ import { AlertModalComponent } from './../../shared/alert-modal/alert-modal.comp
 export class CursosListaComponent implements OnInit {
 
   constructor(
+    private modalservice: BsModalService,
     private service: CursosService,
     private alert: AlertModalService,
     private router: Router,
@@ -30,8 +31,13 @@ export class CursosListaComponent implements OnInit {
 
   // o dolar é uma convenção para deixar claro que a variavel é um observable
   cursos$: Observable<Curso[]>;
-
   error$ = new Subject<boolean>();
+
+  deleteModalRef: BsModalRef;
+
+  cursoSelecionado: Curso;
+
+  @ViewChild('deleteModal') deleteModal; // referencia a variavel local do template
 
   handleError() {
     this.alert.showDanger('Erro ao carregar a lista de cursos.');
@@ -41,8 +47,27 @@ export class CursosListaComponent implements OnInit {
     this.router.navigate(['edit', id], { relativeTo: this.route});
   }
 
-  onDelete(id: number) {
+  onDelete(c: Curso) {
+    this.cursoSelecionado = c;
+    this.deleteModalRef = this.modalservice.show(this.deleteModal, {class: 'modal-sm'});
   }
+
+  onConfirmDelete() {
+
+    this.service.remove(this.cursoSelecionado.id).subscribe(
+      success => this.onRefresh(),
+      error => this.alert.showDanger('Erro ao remover curso.')
+    );
+
+    this.deleteModalRef.hide();
+    console.log('Sumiu!');
+  }
+
+  onDeclineDelete() {
+    this.deleteModalRef.hide();
+    console.log('arregou');
+  }
+
 
   onRefresh() {
     this.cursos$ = this.service.list()

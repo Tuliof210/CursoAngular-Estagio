@@ -34,19 +34,20 @@ export class CursosFormComponent implements OnInit {
     if (this.form.valid) {
       console.log('submit');
 
-      if (this.form.value.id) {
-        this.service.update(this.form.value).subscribe();
-      } else {
+      const msg: string[] = ['criado', 'criar'];
 
-        this.service.create(this.form.value).subscribe(
-          success => {
-            this.modal.showSuccess('Curso criado com sucesso');
-            this.location.back();
-          },
-          error => this.modal.showDanger('Erro ao criar curso'),
-          () => console.log('request completo')
-        );
+      if (this.form.value.id) {
+        msg[0] = 'editado';
+        msg[1] = 'editar';
       }
+
+      this.service.save(this.form.value).subscribe(
+        success => {
+          this.modal.showSuccess(`Curso ${msg[0]} com sucesso`);
+          this.location.back();
+        },
+        error => this.modal.showDanger(`Erro ao ${msg[1]} curso`)
+      );
     }
   }
 
@@ -55,7 +56,7 @@ export class CursosFormComponent implements OnInit {
     this.form.reset();
     this.submitted = false;
 
-    console.log('cancel');
+    this.location.back();
   }
 
   hasError(field: string) {

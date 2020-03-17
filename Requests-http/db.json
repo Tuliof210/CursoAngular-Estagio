@@ -1,8 +1,8 @@
 {
   "cursos": [
     {
-      "nome": "C#",
-      "id": 1
+      "id": 1,
+      "nome": "C#"
     },
     {
       "nome": "Java",
@@ -17,20 +17,24 @@
       "id": 4
     },
     {
-      "nome": "C",
-      "id": 5
-    },
-    {
       "nome": "Swift",
       "id": 6
     },
     {
-      "nome": "ionic",
-      "id": 7
+      "id": 7,
+      "nome": "Ionic"
     },
     {
-      "nome": "go",
-      "id": 8
+      "id": 8,
+      "nome": "Go"
+    },
+    {
+      "id": 9,
+      "nome": "VueJs"
+    },
+    {
+      "id": 10,
+      "nome": "Cobol"
     }
   ]
 }
